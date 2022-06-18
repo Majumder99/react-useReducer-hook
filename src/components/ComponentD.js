@@ -5,14 +5,20 @@ const ComponentD = () => {
   const useCount = useContext(CountContext);
   return (
     <div>
-      ComponentD - {useCount.countState}
-      <button onClick={() => useCount.countDispatch("Increment")}>
+      ComponentA - {useCount.secondCountState}
+      <button
+        onClick={() => useCount.countDispatch({ type: "Increment2", value: 2 })}
+      >
         Increment
       </button>
-      <button onClick={() => useCount.countDispatch("Decrement")}>
+      <button
+        onClick={() => useCount.countDispatch({ type: "Decrement2", value: 2 })}
+      >
         Decrement
       </button>
-      <button onClick={() => useCount.countDispatch("Reset")}>Reset</button>
+      <button onClick={() => useCount.countDispatch({ type: "Reset" })}>
+        Reset
+      </button>
     </div>
   );
 };
